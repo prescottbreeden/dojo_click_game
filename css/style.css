@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+.header {
+  padding: 2rem;
+  border-bottom: 2px solid #333;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+.game {
+  margin-top: 5rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.game > * {
+  max-width: 50%;
+  min-height: 40rem;
+}
+
+.enemy {
+  background-color: #bada55;
+  border: 1px solid grey;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.enemy__img {
+  height: 20rem;
+}
+
+.player {
+  margin: 2rem;
+  padding: 2rem;
+  background-color: #4876ff;
+  border: 1px solid grey;
+}
+.player__img {
+  height: 20rem;
+}
+
+.status-bar {
+  margin: 0 auto;
+  margin-top: 2rem;
+  height: 3rem;
+  width: 50rem;
+  /* background-color: blue; */
+  border: 1px solid #333;
+  position: relative;
+}
+
+.status-bar__health {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  /* background-color: red; */
+  border-right: 1px solid #333;
+}
+
+.status-bar__hp {
+  text-align: left;
+  margin-top: 3.5rem;
+}
