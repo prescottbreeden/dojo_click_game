@@ -9,6 +9,9 @@ function addClasses(node, classes) {
 
 function addChildren(parent, childArray) {
   for (let child of childArray) {
+    if (child.render) {
+      child = child.render();
+    }
     parent.appendChild(child);
   }
   return parent;

@@ -1,23 +1,19 @@
-class Game {
+class GameComponent {
   constructor() {
-    this.enemy = new Enemy('cactuar');
-    this.player = new Player('Dojoman Sephiroth');
-  }
-
-  renderNestedComponents() {
-    const elements = [
-      this.enemy, 
-      this.player,
-    ];
-    return elements.map(ele => ele.render());
+    this.enemy = new EnemyComponent('cactuar');
+    this.player = new PlayerComponent('Dojoman Sephiroth');
   }
 
   render() {
-    return addChildren(section(['game']), this.renderNestedComponents());
+    const children = [
+      this.enemy,
+      this.player
+    ];
+    return addChildren(section(['game']), children);
   }
 
   createNewEnemy() {
-    this.enemy = new Enemy('atma');
+    this.enemy = new EnemyComponent('atma');
   }
 
 }

@@ -1,12 +1,12 @@
-class Header {
-  constructor() {
-    this.elements = [
+class HeaderComponent {
+  constructor() { }
+
+  render() {
+    const elements = [
       h('h1', 'Dojos and Dragons', ['header__title']),
       this.newGameButton() 
     ]
-  }
-  render() {
-    return addChildren(header(['header']), this.elements);
+    return addChildren(header(['header']), elements);
   }
 
   newGameButton() {

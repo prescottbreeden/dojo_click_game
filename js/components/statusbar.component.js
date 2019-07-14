@@ -1,4 +1,4 @@
-class StatusBar {
+class StatusBarComponent {
   constructor(health, max_health, type) {
     this.type = type;
     this.health = health;
@@ -8,7 +8,7 @@ class StatusBar {
   render() {
     const elements = [
       this.healthBar(),
-      p(this.health + '/' + this.max_health, ['status-bar__hp']),
+      p(`${this.health}/${this.max_health}`, ['status-bar__hp']),
     ]
     return addChildren(div([this.type, 'status-bar']), elements);
   }

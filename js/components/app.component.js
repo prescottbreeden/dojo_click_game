@@ -1,18 +1,28 @@
 class App {
   constructor() {
-    this.header = new Header();
-    this.game = new Game();
-  }
-
-  renderNestedComponents() {
-    const elements = [
-      this.header,
-      this.game
-    ]
-    return elements.map(ele => ele.render());
+    this.header = new HeaderComponent();
+    this.game = new GameComponent();
+    this.render();
   }
 
   render() {
-    addChildren(root, this.renderNestedComponents())
+    const elements = [
+      this.header.render(),
+      this.game.render()
+    ]
+    addChildren(root, elements);
+  }
+
+  enemyAttackOn(seconds) {
+    const attack = setInterval(function () {
+      removeChildren(root);
+      app.render();
+      app.game.player.health -= app.game.enemy.strength;
+      if (app.game.player.health <= 0) {
+        alert('womp wooomp... you ded');
+        clearTimeout(attack);
+        location.reload();
+      }
+    }, seconds * 1000);
   }
 }
