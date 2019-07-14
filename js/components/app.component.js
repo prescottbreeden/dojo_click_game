@@ -7,8 +7,8 @@ class App {
 
   render() {
     const elements = [
-      this.header.render(),
-      this.game.render()
+      this.header,
+      this.game
     ]
     addChildren(root, elements);
   }

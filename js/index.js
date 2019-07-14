@@ -1,18 +1,12 @@
 const app = new App();
-// testForMemoryLeak();
 app.enemyAttackOn(1);
+// testForMemoryLeak();
 
 
 function testForMemoryLeak() {
+  const click = new Event('click');
   const attack = setInterval(function() {
-    app.game.player.levelUp();
-    if (Math.round(Math.random()) === 0) {
-      app.game.enemy = new Enemy('cactuar');
-    } else {
-      app.game.createNewEnemy();
-    }
-    removeChildren(root);
-    app.render();
+    document.getElementsByClassName('enemy__img')[0].dispatchEvent(click);
     if (app.game.player.health >= 100000) {
       alert('test complete');
       clearTimeout(attack);
