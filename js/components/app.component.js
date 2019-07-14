@@ -19,7 +19,12 @@ class App {
       app.render();
       app.game.player.health -= app.game.enemy.strength;
       if (app.game.player.health <= 0) {
-        alert('womp wooomp... you ded');
+        const message = `
+        Womp Wooomp... You Ded...
+        Total Points: ${app.game.enemy.max_health} points.
+        Click Faster!
+        `;
+        alert(message);
         clearTimeout(attack);
         location.reload();
       }
